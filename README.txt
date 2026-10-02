@@ -1,4 +1,1 @@
-GOOD CARE PHARMACY - EMBEDDED IMAGE VERSION
-
-Upload ONLY index.html to the root of your GitHub Pages repository.
-All logo, product and gallery photos are embedded directly in the HTML, so no assets folder is needed.
+Good Care Pharmacy exact-design one-file build. Upload index.html only to GitHub Pages. All visual images are embedded directly in the HTML.
