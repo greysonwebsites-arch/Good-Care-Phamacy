@@ -1,26 +1,33 @@
-GOOD CARE PHARMACY LTD — PREMIUM WEBSITE
-=============================================
+GOOD CARE PHARMACY LTD — MODERN WEBSITE
+============================================
 
-Included:
-- Premium responsive one-page website
-- Supplied Good Care Pharmacy logo and promotional poster
-- WhatsApp ordering/enquiries
-- Health-check booking request form -> WhatsApp
-- Product/category catalogue
-- Google Maps location embed + directions link
+This version upgrades the original GitHub website with:
+- More colorful modern green/gold/blue/pink visual system
+- Animated hero elements and floating badges
+- Scroll-reveal animations
+- Hover lift animations on service/product cards
+- Responsive mobile navigation
+- Product category filters
+- Stronger calls-to-action
+- Call, email, WhatsApp and Google Maps actions
+- Health-check booking form -> WhatsApp
 - Contact form -> WhatsApp
-- Click-to-call / email details
-- Mobile responsive layout
+- Mobile-first responsive layout
+- SEO/social metadata
+- Reuses the supplied Good Care Pharmacy logo and promotional poster
 
-Business details used from the supplied materials:
-Address: Mababe Building — Shop No. 2, Independence Avenue, Mumbwa, Zambia
-Phone: +260 977 357 175
-Phone: +260 971 899 094
-Email: goodcarepharmacy22@gmail.com
+FILES:
+- index.html
+- assets/good-care-logo.jpg
+- assets/good-care-poster.jpg
 
 IMPORTANT:
-1. The WhatsApp buttons currently use +260 977 357 175. If that number is not the pharmacy's WhatsApp number, change the `wa` value in index.html.
-2. The Google Maps iframe uses a search-style embed. For a production Google Maps Embed API implementation, create/restrict a Google Maps API key and replace the iframe URL as required by Google.
-3. Appointment requests are NOT automatically confirmed; the pharmacy confirms availability via WhatsApp.
-4. Product availability and prices are intentionally not invented. The catalogue is category-based and sends enquiries to WhatsApp.
-5. Before publishing, confirm the address, phone numbers, email, opening hours and services with the pharmacy.
+1. WhatsApp actions currently use +260 977 357 175.
+2. Confirm the pharmacy's phone numbers, email, address, services and opening hours before publishing.
+3. Product prices and stock are not invented; enquiries are sent to WhatsApp.
+4. Booking requests are not automatically confirmed.
+5. The map uses a search-style Google Maps embed. A production Google Maps Embed API setup can be added if required.
+
+GITHUB PAGES:
+Enable GitHub Pages in the repository Settings -> Pages and publish from the main branch/root.
+GitHub Pages can also use a custom domain if the pharmacy later purchases one.
