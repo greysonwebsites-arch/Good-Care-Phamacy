@@ -31,3 +31,11 @@ IMPORTANT:
 GITHUB PAGES:
 Enable GitHub Pages in the repository Settings -> Pages and publish from the main branch/root.
 GitHub Pages can also use a custom domain if the pharmacy later purchases one.
+
+6. NEW SHOPPING/ENQUIRY CART:
+   - Customers can search and filter the catalogue.
+   - Products/services can be added to an enquiry cart.
+   - Cart quantities can be changed.
+   - Cart is remembered in the visitor's browser with localStorage.
+   - WhatsApp checkout sends the full enquiry/order list.
+   - Prices remain “on enquiry” unless real prices are added later.

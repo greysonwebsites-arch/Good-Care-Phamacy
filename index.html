@@ -147,6 +147,34 @@
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
     @keyframes pulse{0%,100%{box-shadow:0 15px 35px rgba(0,0,0,.22),0 0 0 0 rgba(32,201,107,.35)}50%{box-shadow:0 15px 35px rgba(0,0,0,.22),0 0 0 13px rgba(32,201,107,0)}}
 
+
+    .shop-tools{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:5px 0 25px;flex-wrap:wrap}
+    .search-box{display:flex;align-items:center;gap:10px;flex:1;min-width:250px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 17px;box-shadow:0 8px 25px rgba(0,0,0,.04)}
+    .search-box input{border:0;outline:0;background:transparent;width:100%;padding:10px;font-size:13px}
+    .cart-pill{background:linear-gradient(135deg,#023b2b,#087f5b);color:#fff;border-radius:999px;padding:12px 17px;font-size:12px;font-weight:900;display:flex;gap:10px;align-items:center;box-shadow:0 9px 22px rgba(8,127,91,.2)}
+    .cart-pill b{color:#ffe08a}
+    .product-art{height:105px;border-radius:19px;background:linear-gradient(135deg,#e8f8f0,#fff7dd);display:grid;place-items:center;font-size:48px;margin-bottom:18px;transition:.3s}
+    .product:hover .product-art{transform:scale(1.03) rotate(-1deg)}
+    .product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:15px}
+    .product-bottom strong{font-size:11px;color:var(--green-dark)}
+    .product-bottom .btn{font-size:11px;padding:10px 13px}
+    .empty-state{text-align:center;padding:35px;border:1px dashed #cddbd4;border-radius:20px;color:var(--muted);margin-top:20px}
+    .cart-drawer{position:fixed;inset:0;z-index:200;pointer-events:none}
+    .cart-drawer.open{pointer-events:auto}
+    .cart-overlay{position:absolute;inset:0;background:rgba(1,27,19,.5);opacity:0;transition:.3s}
+    .cart-drawer.open .cart-overlay{opacity:1}
+    .cart-panel{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:#fff;padding:25px;transform:translateX(100%);transition:.35s;box-shadow:-20px 0 60px rgba(0,0,0,.2);display:flex;flex-direction:column}
+    .cart-drawer.open .cart-panel{transform:none}
+    .cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:17px}
+    .cart-head h3{margin:0;font-family:"Playfair Display",serif;font-size:28px}
+    .close-cart{border:0;background:#f1f6f3;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:20px}
+    #cartItems{flex:1;overflow:auto;padding:12px 0}
+    .cart-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid #edf1ee}
+    .cart-row b{font-size:13px}.cart-row span{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+    .qty{display:flex;align-items:center;gap:7px}.qty button{width:27px;height:27px;border:1px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;font-weight:900}
+    .cart-summary{border-top:1px solid var(--line);padding-top:17px}.cart-summary-line{display:flex;justify-content:space-between;font-weight:900;margin-bottom:15px}
+    .cart-empty{text-align:center;color:var(--muted);padding:45px 15px;font-size:13px}
+
     @media(max-width:980px){
       nav{display:none}.menu{display:block}.hero-inner,.about,.form-wrap{grid-template-columns:1fr}.hero-inner{padding-top:65px}.hero-visual{max-width:650px;margin:auto}.info-panel{position:static}.grid{grid-template-columns:1fr 1fr}.catalog{grid-template-columns:1fr 1fr}.trust-grid{grid-template-columns:1fr 1fr}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
       .contact-grid{grid-template-columns:1fr}.cta-box{flex-direction:column;align-items:flex-start}
@@ -239,11 +267,46 @@
           <button class="filter" data-filter="family">Family</button>
           <button class="filter" data-filter="beauty">Beauty</button>
         </div>
-        <div class="catalog">
-          <article class="product reveal" data-category="pharmacy"><span class="tag">Pharmacy</span><h3>Medicines & Health Essentials</h3><p>Tell us what you are looking for and our team can confirm availability and appropriate purchasing requirements.</p><a class="btn btn-green" target="_blank" rel="noopener" href="https://wa.me/260977357175?text=Hello%20Good%20Care%2C%20I%27d%20like%20to%20check%20medicine%20availability.">Check availability</a></article>
-          <article class="product reveal delay-1" data-category="family"><span class="tag">Family</span><h3>Baby Products</h3><p>Ask about baby-care essentials and current stock.</p><a class="btn btn-green" target="_blank" rel="noopener" href="https://wa.me/260977357175?text=Hello%20Good%20Care%2C%20I%27d%20like%20to%20check%20baby%20product%20availability.">Order / enquire</a></article>
-          <article class="product reveal delay-2" data-category="beauty"><span class="tag">Beauty</span><h3>Cosmetics & Personal Care</h3><p>Find out what cosmetics and personal-care products are currently available.</p><a class="btn btn-green" target="_blank" rel="noopener" href="https://wa.me/260977357175?text=Hello%20Good%20Care%2C%20I%27d%20like%20to%20check%20cosmetics%20availability.">Shop / enquire</a></article>
+        <div class="shop-tools reveal">
+          <div class="search-box">
+            <span>🔎</span><input id="productSearch" type="search" placeholder="Search products or categories..." aria-label="Search products">
+          </div>
+          <div class="cart-pill" id="cartPill" role="button" tabindex="0" aria-label="Open enquiry cart">🛒 <span id="cartCount">0</span> items <b id="cartTotal">K0.00</b></div>
         </div>
+
+        <div class="catalog" id="productGrid">
+          <article class="product shop-product reveal" data-category="pharmacy" data-name="pain relief medicines health essentials">
+            <div class="product-art">💊</div><span class="tag">Pharmacy</span><h3>Medicines & Health Essentials</h3>
+            <p>Ask about available medicines and health essentials. Stock and prices are confirmed by the pharmacy.</p>
+            <div class="product-bottom"><strong>Price on enquiry</strong><button class="btn btn-green add-product" data-name="Medicines & Health Essentials" data-price="0">+ Add enquiry</button></div>
+          </article>
+          <article class="product shop-product reveal delay-1" data-category="family" data-name="baby products baby care family">
+            <div class="product-art">👶</div><span class="tag">Family</span><h3>Baby Products</h3>
+            <p>Everyday baby-care essentials. Send the item you need and the pharmacy can confirm current stock.</p>
+            <div class="product-bottom"><strong>Price on enquiry</strong><button class="btn btn-green add-product" data-name="Baby Products" data-price="0">+ Add enquiry</button></div>
+          </article>
+          <article class="product shop-product reveal delay-2" data-category="beauty" data-name="cosmetics personal care beauty">
+            <div class="product-art">✨</div><span class="tag">Beauty</span><h3>Cosmetics & Personal Care</h3>
+            <p>Browse cosmetics and personal-care options available in store.</p>
+            <div class="product-bottom"><strong>Price on enquiry</strong><button class="btn btn-green add-product" data-name="Cosmetics & Personal Care" data-price="0">+ Add enquiry</button></div>
+          </article>
+          <article class="product shop-product reveal" data-category="pharmacy" data-name="blood pressure bp health check">
+            <div class="product-art">❤️</div><span class="tag">Health Check</span><h3>BP Check-up</h3>
+            <p>Request a blood-pressure check and ask the pharmacy about available times.</p>
+            <div class="product-bottom"><strong>Service enquiry</strong><button class="btn btn-green add-product" data-name="BP Check-up" data-price="0">+ Add enquiry</button></div>
+          </article>
+          <article class="product shop-product reveal delay-1" data-category="pharmacy" data-name="diabetes check-up">
+            <div class="product-art">🩺</div><span class="tag">Health Check</span><h3>Diabetes Check-up</h3>
+            <p>Enquire about diabetes-related screening and current service arrangements.</p>
+            <div class="product-bottom"><strong>Service enquiry</strong><button class="btn btn-green add-product" data-name="Diabetes Check-up" data-price="0">+ Add enquiry</button></div>
+          </article>
+          <article class="product shop-product reveal delay-2" data-category="pharmacy" data-name="malaria test">
+            <div class="product-art">🧪</div><span class="tag">Testing</span><h3>Malaria Test</h3>
+            <p>Ask about current malaria testing availability and arrangements.</p>
+            <div class="product-bottom"><strong>Service enquiry</strong><button class="btn btn-green add-product" data-name="Malaria Test" data-price="0">+ Add enquiry</button></div>
+          </article>
+        </div>
+        <div id="noProducts" class="empty-state hidden">No matching products found. Try another search.</div>
       </div>
     </section>
 
@@ -335,6 +398,20 @@
 
   <a class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener" href="https://wa.me/260977357175?text=Hello%20Good%20Care%20Pharmacy%20Ltd%2C%20I%27d%20like%20to%20make%20an%20enquiry.">✆</a>
 
+
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-panel" role="dialog" aria-label="Shopping cart">
+      <div class="cart-head"><h3>Your enquiry</h3><button class="close-cart" id="closeCart" aria-label="Close cart">×</button></div>
+      <div id="cartItems"><div class="cart-empty">Your enquiry list is empty.<br>Add products or services to begin.</div></div>
+      <div class="cart-summary">
+        <div class="cart-summary-line"><span>Total</span><span id="drawerTotal">K0.00</span></div>
+        <button class="btn btn-green" style="width:100%" id="checkoutBtn">📲 Send enquiry on WhatsApp</button>
+        <p class="form-note">Prices shown as “on enquiry” are not included in the total. The pharmacy confirms stock and pricing directly.</p>
+      </div>
+    </aside>
+  </div>
+
   <footer>
     <div class="footer-grid">
       <div><h3 style="font-family:'Playfair Display',serif;font-size:27px;margin:0">Good Care Pharmacy Ltd</h3><p>Caring Beyond Prescription.</p><p>Serving Mumbwa with pharmacy, health-check, baby-care and personal-care enquiries.</p></div>
@@ -367,17 +444,89 @@
   },{threshold:.12});
   document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-  // Catalogue filter
+  // Catalogue search + filters
+  const productCards = [...document.querySelectorAll(".shop-product")];
+  const searchInput = document.getElementById("productSearch");
+  const noProducts = document.getElementById("noProducts");
+  let activeFilter = "all";
+
+  function applyProductFilters(){
+    const term = (searchInput.value || "").toLowerCase().trim();
+    let visible = 0;
+    productCards.forEach(card=>{
+      const matchesCategory = activeFilter === "all" || card.dataset.category === activeFilter;
+      const matchesSearch = !term || card.dataset.name.includes(term) || card.textContent.toLowerCase().includes(term);
+      const show = matchesCategory && matchesSearch;
+      card.classList.toggle("hidden", !show);
+      if(show) visible++;
+    });
+    noProducts.classList.toggle("hidden", visible !== 0);
+  }
   document.querySelectorAll(".filter").forEach(btn=>{
     btn.addEventListener("click",()=>{
       document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
       btn.classList.add("active");
-      const filter = btn.dataset.filter;
-      document.querySelectorAll(".product").forEach(card=>{
-        card.classList.toggle("hidden", filter !== "all" && card.dataset.category !== filter);
-      });
+      activeFilter = btn.dataset.filter;
+      applyProductFilters();
     });
   });
+  searchInput.addEventListener("input", applyProductFilters);
+
+  // Shopping/enquiry cart
+  let cart = JSON.parse(localStorage.getItem("goodCareCart") || "[]");
+  const cartDrawer = document.getElementById("cartDrawer");
+  const cartItems = document.getElementById("cartItems");
+  const cartCount = document.getElementById("cartCount");
+  const cartTotal = document.getElementById("cartTotal");
+  const drawerTotal = document.getElementById("drawerTotal");
+
+  function saveCart(){ localStorage.setItem("goodCareCart", JSON.stringify(cart)); }
+  function renderCart(){
+    const count = cart.reduce((s,i)=>s+i.qty,0);
+    const total = cart.reduce((s,i)=>s+(i.price*i.qty),0);
+    cartCount.textContent = count;
+    cartTotal.textContent = `K${total.toFixed(2)}`;
+    drawerTotal.textContent = `K${total.toFixed(2)}`;
+    if(!cart.length){
+      cartItems.innerHTML='<div class="cart-empty">Your enquiry list is empty.<br>Add products or services to begin.</div>';
+      return;
+    }
+    cartItems.innerHTML = cart.map((item,index)=>`
+      <div class="cart-row">
+        <div><b>${item.name}</b><span>${item.price ? `K${item.price.toFixed(2)} each` : "Price on enquiry"}</span></div>
+        <div class="qty"><button onclick="changeQty(${index},-1)">−</button><b>${item.qty}</b><button onclick="changeQty(${index},1)">+</button></div>
+      </div>`).join("");
+  }
+  window.changeQty = function(index, delta){
+    cart[index].qty += delta;
+    if(cart[index].qty <= 0) cart.splice(index,1);
+    saveCart(); renderCart();
+  };
+  function openCart(){cartDrawer.classList.add("open");cartDrawer.setAttribute("aria-hidden","false")}
+  function closeCart(){cartDrawer.classList.remove("open");cartDrawer.setAttribute("aria-hidden","true")}
+  document.getElementById("cartPill").addEventListener("click",openCart);
+  document.getElementById("closeCart").addEventListener("click",closeCart);
+  document.getElementById("cartOverlay").addEventListener("click",closeCart);
+
+  document.querySelectorAll(".add-product").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const name=btn.dataset.name, price=Number(btn.dataset.price||0);
+      const found=cart.find(i=>i.name===name);
+      if(found) found.qty++; else cart.push({name,price,qty:1});
+      saveCart(); renderCart(); openCart();
+      btn.textContent="✓ Added";
+      setTimeout(()=>btn.textContent="+ Add enquiry",1000);
+    });
+  });
+
+  document.getElementById("checkoutBtn").addEventListener("click",()=>{
+    if(!cart.length){openCart();return;}
+    const lines=cart.map(i=>`${i.qty} x ${i.name}${i.price ? ` — K${(i.price*i.qty).toFixed(2)}` : " — price on enquiry"}`).join("%0A");
+    const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+    const msg=`Hello Good Care Pharmacy Ltd,%0A%0AONLINE ENQUIRY / ORDER%0A%0A${lines}%0A%0AEstimated priced total: K${total.toFixed(2)}%0A%0APlease confirm product availability, prices and collection/delivery arrangements.`;
+    window.open(`https://wa.me/${wa}?text=${msg}`,"_blank");
+  });
+  renderCart();
 
   // Booking -> WhatsApp
   document.getElementById("bookingForm").addEventListener("submit",function(e){
