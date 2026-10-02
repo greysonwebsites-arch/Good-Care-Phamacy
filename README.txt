@@ -1,1 +1,1 @@
-Good Care Pharmacy exact-design one-file build. Upload index.html only to GitHub Pages. All visual images are embedded directly in the HTML.
+Good Care Pharmacy Ltd — approved exact design with subtle premium animations. The layout, colours and content structure are preserved. Upload index.html to GitHub Pages. All images remain embedded in the single HTML file.
