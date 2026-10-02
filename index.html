@@ -186,6 +186,19 @@
       .cta-box{padding:32px 24px}.cta-box .btn{width:100%}.wa-float{right:16px;bottom:16px}
     }
   
+
+    .product-photo{height:185px;border-radius:18px;background:#f7faf8;overflow:hidden;margin-bottom:17px;border:1px solid #edf2ef;position:relative}
+    .product-photo img{width:100%;height:100%;object-fit:cover;transition:.35s}
+    .product:hover .product-photo img{transform:scale(1.05)}
+    .price-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .price{font-size:18px!important;color:var(--green-dark)!important;font-weight:900}
+    .price-note{font-size:9px;color:var(--muted);font-weight:700}
+    .product .status{display:inline-flex;width:max-content;padding:5px 9px;border-radius:999px;background:#eaf8f1;color:var(--green);font-size:9px;font-weight:900;margin-top:3px}
+    .product .status.enquiry{background:#fff6df;color:#8a6714}
+    .catalog-note{margin:0 0 24px;padding:13px 16px;border-radius:16px;background:#f7faf8;border:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.6}
+    .catalog-count{font-size:12px;font-weight:900;color:var(--green-dark);margin:0 0 17px}
+    .quick-order{margin-top:12px;font-size:10px;color:var(--muted)}
+
     .store-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:24px}
     .store-gallery img{width:100%;height:210px;object-fit:cover;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.09);transition:transform .25s ease}
     .store-gallery img:hover{transform:translateY(-4px)}
@@ -267,48 +280,102 @@
       <div class="wrap">
         <div class="section-head reveal"><div class="kicker">Product catalogue</div><h2>Explore by category.</h2><p class="lead">Use WhatsApp to ask about a specific product, brand, pack size or current stock. Medicines are not presented as guaranteed in stock.</p></div>
         <div class="catalog-toolbar reveal">
-          <button class="filter active" data-filter="all">All categories</button>
-          <button class="filter" data-filter="pharmacy">Pharmacy</button>
-          <button class="filter" data-filter="family">Family</button>
-          <button class="filter" data-filter="beauty">Beauty</button>
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="pharmacy">Medicines</button>
+          <button class="filter" data-filter="personal">Personal Care</button>
+          <button class="filter" data-filter="women">Women's Care</button>
+          <button class="filter" data-filter="baby">Baby Care</button>
+          <button class="filter" data-filter="wellness">Wellness</button>
+          <button class="filter" data-filter="services">Health Checks</button>
         </div>
         <div class="shop-tools reveal">
           <div class="search-box">
-            <span>🔎</span><input id="productSearch" type="search" placeholder="Search products or categories..." aria-label="Search products">
+            <span>🔎</span><input id="productSearch" type="search" placeholder="Search products, brands or categories..." aria-label="Search products">
           </div>
           <div class="cart-pill" id="cartPill" role="button" tabindex="0" aria-label="Open enquiry cart">🛒 <span id="cartCount">0</span> items <b id="cartTotal">K0.00</b></div>
         </div>
+        <p class="catalog-note reveal">💡 <strong>Price note:</strong> A few prices below are taken from shelf labels visible in the photos you provided. Prices, pack sizes and stock can change, so please confirm the current price with Good Care Pharmacy before payment or collection.</p>
+        <div class="catalog-count" id="catalogCount">Showing featured products</div>
 
         <div class="catalog" id="productGrid">
-          <article class="product shop-product reveal" data-category="pharmacy" data-name="pain relief medicines health essentials">
+          <article class="product shop-product reveal" data-category="personal" data-name="vaseline blue seal original petroleum jelly skin care personal care">
+            <div class="product-photo"><img src="assets/vaseline.jpg" alt="Vaseline Blue Seal petroleum jelly"></div>
+            <span class="tag">Personal Care</span><h3>Vaseline Blue Seal</h3>
+            <p>Original petroleum jelly from the personal-care range seen in store.</p><span class="status">Shelf price seen</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">K45.00</strong><span class="price-note">confirm current price</span></div><button class="btn btn-green add-product" data-name="Vaseline Blue Seal" data-price="45">+ Add to cart</button></div>
+          </article>
+
+          <article class="product shop-product reveal delay-1" data-category="personal" data-name="inecto cherry red hair colour hair care">
+            <div class="product-photo"><img src="assets/inecto.jpg" alt="Inecto Cherry Red hair colour"></div>
+            <span class="tag">Hair Care</span><h3>Inecto Cherry Red</h3>
+            <p>Hair-colouring product visible in the Good Care Pharmacy display.</p><span class="status">Shelf price seen</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">K50.00</strong><span class="price-note">confirm current price</span></div><button class="btn btn-green add-product" data-name="Inecto Cherry Red" data-price="50">+ Add to cart</button></div>
+          </article>
+
+          <article class="product shop-product reveal delay-2" data-category="personal" data-name="dove beauty bar soap personal care">
+            <div class="product-photo"><img src="assets/dove-soap.jpg" alt="Dove beauty bar soap"></div>
+            <span class="tag">Personal Care</span><h3>Dove Beauty Bar</h3>
+            <p>Personal-care soap displayed in the pharmacy's beauty section.</p><span class="status">Shelf price seen</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">K25.00</strong><span class="price-note">confirm current price</span></div><button class="btn btn-green add-product" data-name="Dove Beauty Bar" data-price="25">+ Add to cart</button></div>
+          </article>
+
+          <article class="product shop-product reveal" data-category="personal" data-name="gentle magic skincare cream soap beauty">
+            <div class="product-photo"><img src="assets/gentle-magic.jpg" alt="Gentle Magic skincare products"></div>
+            <span class="tag">Beauty</span><h3>Gentle Magic Skincare</h3>
+            <p>Gentle Magic skincare products from the beauty range shown in store.</p><span class="status">Shelf price seen</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">K45.00</strong><span class="price-note">confirm current price</span></div><button class="btn btn-green add-product" data-name="Gentle Magic Skincare" data-price="45">+ Add to cart</button></div>
+          </article>
+
+          <article class="product shop-product reveal delay-1" data-category="women" data-name="kotex sanitary pads maxi protect women hygiene">
+            <div class="product-photo"><img src="assets/kotex.jpg" alt="Kotex sanitary pads"></div>
+            <span class="tag">Women's Care</span><h3>Kotex Sanitary Pads</h3>
+            <p>Kotex sanitary products from the women's hygiene display.</p><span class="status enquiry">Price on enquiry</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">Enquire</strong></div><button class="btn btn-green add-product" data-name="Kotex Sanitary Pads" data-price="0">+ Add to cart</button></div>
+          </article>
+
+          <article class="product shop-product reveal delay-2" data-category="baby" data-name="kiss kids baby wipes wipes baby care">
+            <div class="product-photo"><img src="assets/kiss-kids.jpg" alt="Kiss Kids baby wipes"></div>
+            <span class="tag">Baby Care</span><h3>Kiss Kids Baby Wipes</h3>
+            <p>Baby wipes from the baby-care range visible in store.</p><span class="status enquiry">Price on enquiry</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">Enquire</strong></div><button class="btn btn-green add-product" data-name="Kiss Kids Baby Wipes" data-price="0">+ Add to cart</button></div>
+          </article>
+
+          <article class="product shop-product reveal" data-category="women" data-name="dr whites sanitary towels maternity pads women hygiene">
+            <div class="product-photo"><img src="assets/dr-whites.jpg" alt="Dr White's sanitary towels"></div>
+            <span class="tag">Women's Care</span><h3>Dr White's Sanitary Towels</h3>
+            <p>Sanitary and maternity-care products displayed in store.</p><span class="status">Shelf price seen</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">K60.00</strong><span class="price-note">confirm current price</span></div><button class="btn btn-green add-product" data-name="Dr White's Sanitary Towels" data-price="60">+ Add to cart</button></div>
+          </article>
+
+          <article class="product shop-product reveal delay-1" data-category="personal" data-name="hyaluronic acid vitamin c facial serum skin care">
+            <div class="product-photo"><img src="assets/ha-serum.jpg" alt="Professional facial serum products"></div>
+            <span class="tag">Skin Care</span><h3>Facial Serum Range</h3>
+            <p>Hyaluronic acid and vitamin facial-serum products visible in store.</p><span class="status enquiry">Price on enquiry</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">Enquire</strong></div><button class="btn btn-green add-product" data-name="Facial Serum Range" data-price="0">+ Add to cart</button></div>
+          </article>
+
+          <article class="product shop-product reveal delay-2" data-category="pharmacy" data-name="medicines pharmacy pain relief cold flu health essentials">
             <div class="product-art">💊</div><span class="tag">Pharmacy</span><h3>Medicines & Health Essentials</h3>
-            <p>Ask about available medicines and health essentials. Stock and prices are confirmed by the pharmacy.</p>
-            <div class="product-bottom"><strong>Price on enquiry</strong><button class="btn btn-green add-product" data-name="Medicines & Health Essentials" data-price="0">+ Add enquiry</button></div>
+            <p>Ask about a specific medicine, brand, pack size or current stock. Prices are confirmed by the pharmacy.</p><span class="status enquiry">Price on enquiry</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">Enquire</strong></div><button class="btn btn-green add-product" data-name="Medicines & Health Essentials" data-price="0">+ Add to cart</button></div>
           </article>
-          <article class="product shop-product reveal delay-1" data-category="family" data-name="baby products baby care family">
-            <div class="product-art">👶</div><span class="tag">Family</span><h3>Baby Products</h3>
-            <p>Everyday baby-care essentials. Send the item you need and the pharmacy can confirm current stock.</p>
-            <div class="product-bottom"><strong>Price on enquiry</strong><button class="btn btn-green add-product" data-name="Baby Products" data-price="0">+ Add enquiry</button></div>
-          </article>
-          <article class="product shop-product reveal delay-2" data-category="beauty" data-name="cosmetics personal care beauty">
-            <div class="product-art">✨</div><span class="tag">Beauty</span><h3>Cosmetics & Personal Care</h3>
-            <p>Browse cosmetics and personal-care options available in store.</p>
-            <div class="product-bottom"><strong>Price on enquiry</strong><button class="btn btn-green add-product" data-name="Cosmetics & Personal Care" data-price="0">+ Add enquiry</button></div>
-          </article>
-          <article class="product shop-product reveal" data-category="pharmacy" data-name="blood pressure bp health check">
+
+          <article class="product shop-product reveal" data-category="services" data-name="blood pressure bp health check">
             <div class="product-art">❤️</div><span class="tag">Health Check</span><h3>BP Check-up</h3>
-            <p>Request a blood-pressure check and ask the pharmacy about available times.</p>
-            <div class="product-bottom"><strong>Service enquiry</strong><button class="btn btn-green add-product" data-name="BP Check-up" data-price="0">+ Add enquiry</button></div>
+            <p>Request a blood-pressure check and ask the pharmacy about current arrangements.</p><span class="status enquiry">Service enquiry</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">Enquire</strong></div><button class="btn btn-green add-product" data-name="BP Check-up" data-price="0">+ Add to cart</button></div>
           </article>
-          <article class="product shop-product reveal delay-1" data-category="pharmacy" data-name="diabetes check-up">
+
+          <article class="product shop-product reveal delay-1" data-category="services" data-name="diabetes blood sugar check-up">
             <div class="product-art">🩺</div><span class="tag">Health Check</span><h3>Diabetes Check-up</h3>
-            <p>Enquire about diabetes-related screening and current service arrangements.</p>
-            <div class="product-bottom"><strong>Service enquiry</strong><button class="btn btn-green add-product" data-name="Diabetes Check-up" data-price="0">+ Add enquiry</button></div>
+            <p>Enquire about diabetes-related screening and current service arrangements.</p><span class="status enquiry">Service enquiry</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">Enquire</strong></div><button class="btn btn-green add-product" data-name="Diabetes Check-up" data-price="0">+ Add to cart</button></div>
           </article>
-          <article class="product shop-product reveal delay-2" data-category="pharmacy" data-name="malaria test">
+
+          <article class="product shop-product reveal delay-2" data-category="services" data-name="malaria test testing">
             <div class="product-art">🧪</div><span class="tag">Testing</span><h3>Malaria Test</h3>
-            <p>Ask about current malaria testing availability and arrangements.</p>
-            <div class="product-bottom"><strong>Service enquiry</strong><button class="btn btn-green add-product" data-name="Malaria Test" data-price="0">+ Add enquiry</button></div>
+            <p>Ask about current malaria testing availability and arrangements.</p><span class="status enquiry">Service enquiry</span>
+            <div class="product-bottom"><div class="price-row"><strong class="price">Enquire</strong></div><button class="btn btn-green add-product" data-name="Malaria Test" data-price="0">+ Add to cart</button></div>
           </article>
         </div>
         <div id="noProducts" class="empty-state hidden">No matching products found. Try another search.</div>
@@ -482,6 +549,8 @@
       if(show) visible++;
     });
     noProducts.classList.toggle("hidden", visible !== 0);
+    const countEl = document.getElementById("catalogCount");
+    if(countEl) countEl.textContent = `Showing ${visible} item${visible === 1 ? "" : "s"}`;
   }
   document.querySelectorAll(".filter").forEach(btn=>{
     btn.addEventListener("click",()=>{
@@ -544,7 +613,9 @@
     if(!cart.length){openCart();return;}
     const lines=cart.map(i=>`${i.qty} x ${i.name}${i.price ? ` — K${(i.price*i.qty).toFixed(2)}` : " — price on enquiry"}`).join("%0A");
     const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-    const msg=`Hello Good Care Pharmacy Ltd,%0A%0AONLINE ENQUIRY / ORDER%0A%0A${lines}%0A%0AEstimated priced total: K${total.toFixed(2)}%0A%0APlease confirm product availability, prices and collection/delivery arrangements.`;
+    const priced=cart.filter(i=>i.price>0).length;
+    const totalLine=priced ? `%0A%0AVisible-price subtotal: K${total.toFixed(2)}` : "";
+    const msg=`Hello Good Care Pharmacy Ltd,%0A%0AONLINE ENQUIRY / ORDER%0A%0A${lines}${totalLine}%0A%0APlease confirm current product availability, prices and collection/delivery arrangements before payment.`;
     window.open(`https://wa.me/${wa}?text=${msg}`,"_blank");
   });
   renderCart();

@@ -1,46 +1,22 @@
-GOOD CARE PHARMACY LTD — MODERN WEBSITE
-============================================
+GOOD CARE PHARMACY LTD — ONLINE SHOP UPGRADE
 
-This version upgrades the original GitHub website with:
-- More colorful modern green/gold/blue/pink visual system
-- Animated hero elements and floating badges
-- Scroll-reveal animations
-- Hover lift animations on service/product cards
-- Responsive mobile navigation
-- Product category filters
-- Stronger calls-to-action
-- Call, email, WhatsApp and Google Maps actions
-- Health-check booking form -> WhatsApp
-- Contact form -> WhatsApp
-- Mobile-first responsive layout
-- SEO/social metadata
-- Reuses the supplied Good Care Pharmacy logo and promotional poster
+This package upgrades the Good Care Pharmacy website into a more complete online storefront.
 
-FILES:
-- index.html
-- assets/good-care-logo.jpg
-- assets/good-care-poster.jpg
+Included:
+- Product search and category filters
+- Product cards with photos from the pharmacy's supplied shelf images
+- Selected shelf-label prices where visible in the supplied photos
+- Price-on-enquiry items for products whose price was not clear
+- Add-to-cart / enquiry cart with quantity controls
+- WhatsApp checkout using +260 977 357 175
+- Existing health-check booking and contact-to-WhatsApp features
+- In-store photo gallery
+- Responsive mobile layout
 
-IMPORTANT:
-1. WhatsApp actions currently use +260 977 357 175.
-2. Confirm the pharmacy's phone numbers, email, address, services and opening hours before publishing.
-3. Product prices and stock are not invented; enquiries are sent to WhatsApp.
-4. Booking requests are not automatically confirmed.
-5. The map uses a search-style Google Maps embed. A production Google Maps Embed API setup can be added if required.
+PRICE NOTE:
+A few displayed prices were read from visible shelf labels in the supplied photos. Prices, pack sizes and stock can change. Customers are prompted to confirm the current price and availability before payment or collection.
 
-GITHUB PAGES:
-Enable GitHub Pages in the repository Settings -> Pages and publish from the main branch/root.
-GitHub Pages can also use a custom domain if the pharmacy later purchases one.
+HOW TO PUBLISH:
+Replace the existing website files in the GitHub repository with all files in this package, including the assets folder.
 
-6. NEW SHOPPING/ENQUIRY CART:
-   - Customers can search and filter the catalogue.
-   - Products/services can be added to an enquiry cart.
-   - Cart quantities can be changed.
-   - Cart is remembered in the visitor's browser with localStorage.
-   - WhatsApp checkout sends the full enquiry/order list.
-   - Prices remain “on enquiry” unless real prices are added later.
-
-NEW IN THIS UPDATE:
-- Added a photo gallery using the real in-store shelf photos supplied by the pharmacy.
-- Product prices remain “Price on enquiry” unless confirmed. Small shelf stickers are not clear/reliable enough to publish as a price list.
-- Gallery photos are stored in the assets folder and will upload with the website.
+No payment gateway is connected. The cart sends an order/enquiry to WhatsApp for confirmation.
