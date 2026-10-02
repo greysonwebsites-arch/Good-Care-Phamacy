@@ -203,18 +203,7 @@
     .store-gallery img{width:100%;height:210px;object-fit:cover;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.09);transition:transform .25s ease}
     .store-gallery img:hover{transform:translateY(-4px)}
     @media(max-width:760px){.store-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.store-gallery img{height:150px}}
-  
-    .health-hub{background:linear-gradient(180deg,#f7fbf9,#fff)}
-    .health-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .health-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:23px;padding:25px;box-shadow:0 10px 28px rgba(0,0,0,.035);transition:.3s;overflow:hidden}
-    .health-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
-    .health-card .health-icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:26px;background:var(--mint);margin-bottom:16px}
-    .health-card:nth-child(2) .health-icon{background:#eaf2ff}.health-card:nth-child(3) .health-icon{background:#fff4d7}.health-card:nth-child(4) .health-icon{background:#fbeafa}
-    .health-card h3{margin:0 0 9px;font-size:18px}.health-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}.health-card .read{display:inline-flex;margin-top:16px;color:var(--green);font-size:12px;font-weight:900}
-    .page-hero{background:linear-gradient(135deg,#023b2b,#087f5b 65%,#0b9a70);color:#fff;padding:65px 22px;position:relative;overflow:hidden}.page-hero:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;right:-100px;top:-120px;background:rgba(232,184,75,.18)}.page-hero .wrap{position:relative;z-index:2}.page-hero .kicker{color:#ffe7a1}.page-hero h1{font-size:clamp(40px,6vw,68px);margin:12px 0;color:#fff}.page-hero p{max-width:760px;color:rgba(255,255,255,.82);font-size:16px;line-height:1.75}.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.article-card{background:#fff;border:1px solid var(--line);border-radius:23px;padding:26px;box-shadow:0 10px 28px rgba(0,0,0,.035);transition:.3s}.article-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}.article-card .tag{display:inline-flex;background:#eaf8f1;color:var(--green);border-radius:999px;padding:6px 10px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}.article-card h3{font-family:"Playfair Display",serif;font-size:25px;margin:14px 0 10px}.article-card p{color:var(--muted);font-size:13px;line-height:1.7}.article-card a{display:inline-flex;margin-top:12px;color:var(--green);font-weight:900;font-size:12px}.health-detail{max-width:920px;background:#fff;border:1px solid var(--line);border-radius:26px;padding:32px;box-shadow:var(--shadow)}.health-detail h2{font-size:34px}.health-detail h3{color:var(--green-dark);margin-top:28px}.health-detail p,.health-detail li{color:var(--muted);font-size:14px;line-height:1.8}.health-detail li{margin:7px 0}.health-note{background:#fff7df;border-left:4px solid var(--gold);padding:16px 18px;border-radius:12px;color:#5f501f;font-size:13px;line-height:1.65;margin:20px 0}.source-links{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px;margin-top:28px}.source-links a{color:var(--green);text-decoration:underline}.topic-search{display:flex;gap:10px;margin:20px 0;max-width:720px}.topic-search input{flex:1;border:1px solid var(--line);border-radius:999px;padding:13px 17px;outline:none}.topic-search input:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(8,127,91,.08)}
-    @media(max-width:980px){.health-grid,.article-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:620px){.health-grid,.article-grid{grid-template-columns:1fr}.page-hero{padding:52px 16px}.health-detail{padding:23px}}
-</style>
+  </style>
 </head>
 <body>
   <div class="topbar">
@@ -229,14 +218,13 @@
         <span><strong>GOOD CARE PHARMACY LTD</strong><small>CARING BEYOND PRESCRIPTION</small></span>
       </a>
       <nav id="mainNav">
-        <a href="index.html">Home</a>
-        <a href="index.html#catalogue">Shop All</a>
-        <a href="health-news.html">Health News</a>
-        <a href="doctors-corner.html">Doctor's Corner</a>
-        <a href="disease-prevention.html">Disease Prevention</a>
-        <a href="medicine-guide.html">Medicine Guide</a>
-        <a href="index.html#contact">Contact</a>
-        <a class="btn btn-green" target="_blank" rel="noopener" href="https://wa.me/260977357175?text=Hello%20Good%20Care%20Pharmacy%20Ltd%2C%20I%27d%20like%20to%20make%20an%20enquiry.">💬 WhatsApp</a>
+        <a href="#services">Services</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#about">About</a>
+        <a href="#booking">Book a Check</a>
+        <a href="health-news.html">Health Centre</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-green" href="https://wa.me/260977357175?text=Hello%20Good%20Care%20Pharmacy%20Ltd%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">💬 WhatsApp</a>
       </nav>
       <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
@@ -411,6 +399,22 @@
       </div>
     </section>
 
+    <section id="health-centre" class="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="kicker">Good Care Health Centre</div>
+          <h2>Trusted health information, in one place.</h2>
+          <p class="lead">Explore practical health education from Good Care Pharmacy. These pages are for general information and do not replace advice from a qualified health professional.</p>
+        </div>
+        <div class="grid">
+          <a class="card reveal" href="health-news.html"><div class="icon">📰</div><h3>Health News</h3><p>Medicine-safety updates, health topics and useful community information.</p></a>
+          <a class="card reveal delay-1" href="doctors-corner.html"><div class="icon">🩺</div><h3>Doctor's Corner</h3><p>Questions to ask, health-check basics and practical guidance for everyday health.</p></a>
+          <a class="card reveal delay-2" href="disease-prevention.html"><div class="icon">🛡️</div><h3>Disease Prevention</h3><p>Learn about prevention, warning signs and when to seek professional care.</p></a>
+          <a class="card reveal delay-3" href="medicine-guide.html"><div class="icon">💊</div><h3>Medicine Guide</h3><p>Simple reminders for safe medicine use, storage and trusted medicine information.</p></a>
+        </div>
+      </div>
+    </section>
+
     <section id="about">
       <div class="wrap about">
         <div class="about-img reveal"><img src="assets/good-care-poster.jpg" alt="Good Care Pharmacy Ltd promotional poster"></div>
@@ -450,18 +454,6 @@
           <button class="btn btn-green" type="submit">📲 Send booking request on WhatsApp</button>
           <div id="bookingNotice" class="notice"></div>
         </form>
-      </div>
-    </section>
-
-    <section class="health-hub" id="health-centre">
-      <div class="wrap">
-        <div class="section-head reveal"><span class="kicker">GOOD CARE HEALTH CENTRE</span><h2>More Than a Pharmacy.</h2><p class="lead">Explore simple health information, medicine guidance, disease-prevention tips and questions to discuss with a qualified health professional.</p></div>
-        <div class="health-grid">
-          <article class="health-card reveal delay-1"><div class="health-icon">📰</div><h3>Health News</h3><p>Educational health updates, medicine-safety reminders and community health topics.</p><a class="read" href="health-news.html">Explore Health News →</a></article>
-          <article class="health-card reveal delay-2"><div class="health-icon">🩺</div><h3>Doctor's Corner</h3><p>Practical questions to ask, health-check guidance and general wellness information.</p><a class="read" href="doctors-corner.html">Visit Doctor's Corner →</a></article>
-          <article class="health-card reveal delay-3"><div class="health-icon">🛡️</div><h3>Disease Prevention</h3><p>Learn about prevention, healthy habits and when to seek professional care.</p><a class="read" href="disease-prevention.html">Learn Prevention →</a></article>
-          <article class="health-card reveal delay-4"><div class="health-icon">💊</div><h3>Medicine Guide</h3><p>Simple medicine-safety information covering directions, storage and trusted sources.</p><a class="read" href="medicine-guide.html">Read Medicine Guide →</a></article>
-        </div>
       </div>
     </section>
 
@@ -528,7 +520,7 @@
   <footer>
     <div class="footer-grid">
       <div><h3 style="font-family:'Playfair Display',serif;font-size:27px;margin:0">Good Care Pharmacy Ltd</h3><p>Caring Beyond Prescription.</p><p>Serving Mumbwa with pharmacy, health-check, baby-care and personal-care enquiries.</p></div>
-      <div><h4>Quick links</h4><ul><li><a href="#services">Services</a></li><li><a href="#catalogue">Catalogue</a></li><li><a href="#booking">Book a check</a></li><li><a href="#contact">Contact</a></li><li><a href="health-news.html">Health News</a></li><li><a href="doctors-corner.html">Doctor's Corner</a></li><li><a href="disease-prevention.html">Disease Prevention</a></li><li><a href="medicine-guide.html">Medicine Guide</a></li></ul></div>
+      <div><h4>Quick links</h4><ul><li><a href="#services">Services</a></li><li><a href="#catalogue">Catalogue</a></li><li><a href="#booking">Book a check</a></li><li><a href="#health-centre">Health Centre</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div><h4>Contact</h4><ul><li>+260 977 357 175</li><li>+260 971 899 094</li><li>goodcarepharmacy22@gmail.com</li><li>Mababe Building, Shop No. 2</li></ul></div>
     </div>
     <div class="footer-bottom"><span>© <span id="year"></span> Good Care Pharmacy Ltd. All rights reserved.</span><span>Modern website prepared for Good Care Pharmacy Ltd.</span></div>
