@@ -1,22 +1,33 @@
-GOOD CARE PHARMACY LTD — ONLINE SHOP UPGRADE
+GOOD CARE PHARMACY LTD — GITHUB PAGES UPLOAD
 
-This package upgrades the Good Care Pharmacy website into a more complete online storefront.
+IMPORTANT: Upload EVERYTHING in this folder to the root of your GitHub repository.
 
-Included:
-- Product search and category filters
-- Product cards with photos from the pharmacy's supplied shelf images
-- Selected shelf-label prices where visible in the supplied photos
-- Price-on-enquiry items for products whose price was not clear
-- Add-to-cart / enquiry cart with quantity controls
-- WhatsApp checkout using +260 977 357 175
-- Existing health-check booking and contact-to-WhatsApp features
-- In-store photo gallery
-- Responsive mobile layout
+Required structure:
+  index.html
+  assets/
+    good-care-logo.jpg
+    good-care-poster.jpg
+    store-beauty.jpg
+    store-medicines.jpg
+    store-medicines-2.jpg
+    store-display-1.jpg
+    store-display-2.jpg
+    store-display-3.jpg
+    store-products.jpg
+    vaseline.jpg
+    inecto.jpg
+    dove-soap.jpg
+    gentle-magic.jpg
+    kotex.jpg
+    kiss-kids.jpg
+    dr-whites.jpg
+    ha-serum.jpg
 
-PRICE NOTE:
-A few displayed prices were read from visible shelf labels in the supplied photos. Prices, pack sizes and stock can change. Customers are prompted to confirm the current price and availability before payment or collection.
+DO NOT upload only index.html.
+The pictures are referenced as relative paths such as ./assets/vaseline.jpg.
 
-HOW TO PUBLISH:
-Replace the existing website files in the GitHub repository with all files in this package, including the assets folder.
+GitHub Pages settings:
+Settings > Pages > Build and deployment > Deploy from a branch
+Branch: main (or your publishing branch), Folder: / (root)
 
-No payment gateway is connected. The cart sends an order/enquiry to WhatsApp for confirmation.
+After uploading, wait for GitHub Pages to rebuild, then hard-refresh the site.
