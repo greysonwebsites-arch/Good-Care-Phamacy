@@ -185,6 +185,11 @@
       form,.contact-card,.info-panel{padding:23px}.topbar{padding:8px 16px;text-align:center}.brand img{width:44px;height:44px}.brand strong{font-size:13px}.brand small{font-size:7px}
       .cta-box{padding:32px 24px}.cta-box .btn{width:100%}.wa-float{right:16px;bottom:16px}
     }
+  
+    .store-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:24px}
+    .store-gallery img{width:100%;height:210px;object-fit:cover;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.09);transition:transform .25s ease}
+    .store-gallery img:hover{transform:translateY(-4px)}
+    @media(max-width:760px){.store-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.store-gallery img{height:150px}}
   </style>
 </head>
 <body>
@@ -307,6 +312,22 @@
           </article>
         </div>
         <div id="noProducts" class="empty-state hidden">No matching products found. Try another search.</div>
+      </div>
+    </section>
+
+
+    <section class="catalog-wrap" id="in-store">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">Inside Good Care</div><h2>See what’s on our shelves.</h2><p class="lead">A look at our in-store range of medicines, personal care, baby essentials and wellness products. Contact us to confirm a product’s price and availability.</p></div>
+        <div class="store-gallery">
+          <img src="assets/store-medicines.jpg" alt="Medicines and pharmacy products on Good Care Pharmacy shelves" loading="lazy">
+          <img src="assets/store-beauty.jpg" alt="Beauty and personal care products in store" loading="lazy">
+          <img src="assets/store-products.jpg" alt="Pharmacy product shelves" loading="lazy">
+          <img src="assets/store-medicines-2.jpg" alt="More medicines and health products" loading="lazy">
+          <img src="assets/store-display-1.jpg" alt="Personal care and hygiene display" loading="lazy">
+          <img src="assets/store-display-2.jpg" alt="Baby care and sanitary products display" loading="lazy">
+          <img src="assets/store-display-3.jpg" alt="Skin care and hygiene products display" loading="lazy">
+        </div>
       </div>
     </section>
 

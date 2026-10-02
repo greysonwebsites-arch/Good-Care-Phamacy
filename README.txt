@@ -39,3 +39,8 @@ GitHub Pages can also use a custom domain if the pharmacy later purchases one.
    - Cart is remembered in the visitor's browser with localStorage.
    - WhatsApp checkout sends the full enquiry/order list.
    - Prices remain “on enquiry” unless real prices are added later.
+
+NEW IN THIS UPDATE:
+- Added a photo gallery using the real in-store shelf photos supplied by the pharmacy.
+- Product prices remain “Price on enquiry” unless confirmed. Small shelf stickers are not clear/reliable enough to publish as a price list.
+- Gallery photos are stored in the assets folder and will upload with the website.
