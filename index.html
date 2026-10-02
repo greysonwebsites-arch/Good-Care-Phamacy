@@ -24,41 +24,74 @@
 @media(max-width:1000px){.products{grid-template-columns:repeat(4,1fr)}.menu a{padding:14px 15px}.cats{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){.top{font-size:10px}.top .right{display:none}.navmain{height:auto;padding:10px 4%;flex-wrap:wrap}.logo{width:190px;height:56px}.search{order:3;width:100%}.account{display:none}.menu{justify-content:flex-start}.cats{grid-template-columns:repeat(2,1fr);padding:14px 4%}.hero{height:350px}.heroText{padding:38px 5%}h1{font-size:34px}.trust{flex-wrap:wrap}.products{grid-template-columns:repeat(2,1fr)}.bands{grid-template-columns:1fr}.visit{grid-template-columns:1fr}.footer{grid-template-columns:1fr 1fr}}
 
-/* ===== Good Care Pharmacy — subtle premium animations ===== */
+
+/* ===== Good Care Pharmacy — Professional Motion System ===== */
 html{scroll-behavior:smooth}
-.heroText{animation:heroTextIn .9s cubic-bezier(.2,.8,.2,1) both}
-.script{animation:fadeUp .7s .1s both}
-.heroText h1{animation:fadeUp .8s .2s both}
-.heroText p{animation:fadeUp .8s .3s both}
-.trust div{animation:fadeUp .7s both}
-.trust div:nth-child(1){animation-delay:.38s}
-.trust div:nth-child(2){animation-delay:.48s}
-.trust div:nth-child(3){animation-delay:.58s}
-.hero .btn{animation:fadeUp .8s .65s both}
-.cat{transition:transform .25s ease,box-shadow .25s ease;animation:softPop .65s both}
-.cat:nth-child(1){animation-delay:.05s}.cat:nth-child(2){animation-delay:.12s}
-.cat:nth-child(3){animation-delay:.19s}.cat:nth-child(4){animation-delay:.26s}.cat:nth-child(5){animation-delay:.33s}
-.cat:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(0,90,55,.12)}
-.card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;animation:cardIn .6s both}
-.card:hover{transform:translateY(-7px);box-shadow:0 15px 30px rgba(0,90,55,.12);border-color:#b9d9c9}
-.card .pic img{transition:transform .35s ease}
-.card:hover .pic img{transform:scale(1.06)}
-.add{transition:transform .2s ease,box-shadow .2s ease}
-.add:hover{transform:translateY(-2px);box-shadow:0 7px 16px rgba(0,122,69,.2)}
-.btn{transition:transform .2s ease,box-shadow .2s ease}
-.btn:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(0,122,69,.22)}
-.band{transition:transform .25s ease,box-shadow .25s ease}
-.band:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.08)}
-.logo{transition:transform .25s ease}
-.logo:hover{transform:scale(1.02)}
-.search:focus-within{box-shadow:0 0 0 3px rgba(0,122,69,.09);border-color:#9acdb4}
-@keyframes heroTextIn{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-@keyframes softPop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
-@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){
-  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-}
+body{overflow-x:hidden}
+.hero{isolation:isolate}
+.hero:before{content:"";position:absolute;inset:-15%;background:radial-gradient(circle at 78% 28%,rgba(241,207,45,.34),transparent 20%),radial-gradient(circle at 70% 75%,rgba(0,122,69,.16),transparent 25%);animation:heroGlow 7s ease-in-out infinite alternate;z-index:1;pointer-events:none}
+.hero:after{animation:heroSweep 1.4s cubic-bezier(.16,1,.3,1) both}
+.heroText{animation:heroEnter 1.1s cubic-bezier(.16,1,.3,1) both}
+.script{animation:fadeUpStrong .75s .15s both}
+.heroText h1{animation:fadeUpStrong .9s .28s both}
+.heroText p{animation:fadeUpStrong .9s .42s both}
+.trust div{animation:trustIn .7s cubic-bezier(.16,1,.3,1) both}
+.trust div:nth-child(1){animation-delay:.54s}.trust div:nth-child(2){animation-delay:.64s}.trust div:nth-child(3){animation-delay:.74s}
+.hero .btn{animation:ctaIn .8s .86s both;position:relative;overflow:hidden}
+.hero .btn:after{content:"";position:absolute;top:-50%;left:-80%;width:45%;height:200%;background:rgba(255,255,255,.28);transform:rotate(25deg);animation:shine 3.8s 1.6s infinite}
+.cats{perspective:1000px}
+.cat{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;animation:categoryIn .8s cubic-bezier(.16,1,.3,1) both;position:relative;overflow:hidden}
+.cat:before{content:"";position:absolute;width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.45);top:-55px;right:-45px;transition:transform .45s ease}
+.cat:hover{transform:translateY(-10px) rotateX(3deg) scale(1.025);box-shadow:0 18px 35px rgba(0,90,55,.16)}
+.cat:hover:before{transform:scale(2.3)}
+.products .card{animation:productIn .7s cubic-bezier(.16,1,.3,1) both}
+.products .card:nth-child(1){animation-delay:.05s}.products .card:nth-child(2){animation-delay:.12s}.products .card:nth-child(3){animation-delay:.19s}.products .card:nth-child(4){animation-delay:.26s}.products .card:nth-child(5){animation-delay:.33s}.products .card:nth-child(6){animation-delay:.40s}.products .card:nth-child(7){animation-delay:.47s}
+.card{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease,border-color .35s ease}
+.card:hover{transform:translateY(-12px) scale(1.018);box-shadow:0 20px 40px rgba(0,90,55,.15);border-color:#a9d5bd}
+.card .pic{position:relative}
+.card .pic:after{content:"";position:absolute;inset:10px;border-radius:10px;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.55),transparent 70%);transform:translateX(-130%);transition:none}
+.card:hover .pic:after{animation:productShine 1.1s ease}
+.card .pic img{transition:transform .5s cubic-bezier(.16,1,.3,1);filter:drop-shadow(0 4px 4px rgba(0,0,0,.04))}
+.card:hover .pic img{transform:translateY(-7px) scale(1.10)}
+.add{transition:transform .22s ease,box-shadow .22s ease;background:linear-gradient(135deg,#008247,#006b3d)}
+.add:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 9px 20px rgba(0,122,69,.28)}
+.btn{transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 25px rgba(0,122,69,.25)}
+.bands .band{animation:bandIn .8s cubic-bezier(.16,1,.3,1) both;transition:transform .35s ease,box-shadow .35s ease}
+.bands .band:nth-child(1){animation-delay:.05s}.bands .band:nth-child(2){animation-delay:.16s}.bands .band:nth-child(3){animation-delay:.27s}
+.band:hover{transform:translateY(-8px) scale(1.015);box-shadow:0 18px 34px rgba(0,0,0,.10)}
+.storeImg{transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .35s ease}
+.visit:hover .storeImg{transform:scale(1.025);box-shadow:0 15px 30px rgba(0,0,0,.12)}
+.logo{transition:transform .35s ease}
+.logo:hover{transform:scale(1.035) rotate(-1deg)}
+.search{transition:box-shadow .3s ease,border-color .3s ease,transform .3s ease}
+.search:focus-within{transform:translateY(-2px);box-shadow:0 0 0 4px rgba(0,122,69,.10),0 10px 22px rgba(0,90,55,.08);border-color:#7fc39e}
+.top{background-size:200% 100%;animation:topFlow 8s linear infinite}
+.cart{transition:transform .2s ease}
+.cart.bump{animation:cartBump .55s cubic-bezier(.16,1,.3,1)}
+#toast{animation:toastIn .35s cubic-bezier(.16,1,.3,1)}
+.sectionHead h2{position:relative}
+.sectionHead h2:after{content:"";display:block;width:0;height:2px;background:#f1cf2d;margin-top:5px;transition:width .5s ease}
+.sectionHead:hover h2:after{width:100%}
+@keyframes heroEnter{from{opacity:0;transform:translate3d(-70px,0,0) scale(.97)}to{opacity:1;transform:none}}
+@keyframes heroSweep{from{opacity:0;transform:translateX(-12%)}to{opacity:1;transform:none}}
+@keyframes heroGlow{from{transform:translate3d(-2%,0,0) scale(1)}to{transform:translate3d(3%,2%,0) scale(1.08)}}
+@keyframes fadeUpStrong{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes trustIn{from{opacity:0;transform:translateY(25px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes ctaIn{from{opacity:0;transform:translateY(25px) scale(.9)}to{opacity:1;transform:none}}
+@keyframes shine{0%,55%{left:-80%}75%,100%{left:140%}}
+@keyframes categoryIn{from{opacity:0;transform:translateY(35px) rotateX(10deg)}to{opacity:1;transform:none}}
+@keyframes productIn{from{opacity:0;transform:translateY(45px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes productShine{from{transform:translateX(-130%)}to{transform:translateX(130%)}}
+@keyframes bandIn{from{opacity:0;transform:translateY(35px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes topFlow{0%{background-position:0 0}100%{background-position:200% 0}}
+@keyframes cartBump{0%,100%{transform:none}35%{transform:scale(1.25) rotate(-3deg)}70%{transform:scale(.95) rotate(2deg)}}
+@keyframes toastIn{from{opacity:0;transform:translateY(20px) scale(.9)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+
+.scrollReveal{opacity:0;transform:translateY(45px);transition:opacity .8s cubic-bezier(.16,1,.3,1) var(--reveal-delay),transform .8s cubic-bezier(.16,1,.3,1) var(--reveal-delay)}
+.scrollReveal.revealed{opacity:1;transform:none}
 
 </style></head><body>
 <div class="top"><div>📍 Mumbwa, Zambia &nbsp; • &nbsp; Open Mon–Sat: 7:30 AM–7:00 PM | Sun: 8:00 AM–5:00 PM</div><div class="right"><span>☎ +260 975 723 121</span><span>💬 Order on WhatsApp</span></div></div>
@@ -81,7 +114,7 @@ const products=[
 ];
 let cart=[];
 function render(list=products){document.getElementById('products').innerHTML=list.map((p,i)=>'<article class="card"><div class="pic"><img src="'+p[2]+'" alt="'+p[0]+'"></div><div class="name">'+p[0]+'</div><div class="price">'+p[1]+'</div><button class="add" onclick="add('+i+')">🛒 Add to Cart</button></article>').join('')}
-function add(i){cart.push(products[i]);document.getElementById('count').textContent=cart.length;document.getElementById('total').textContent='K'+cart.reduce((s,p)=>s+parseFloat(p[1].replace('K','')),0).toFixed(2);let t=document.getElementById('toast');t.textContent='Added to cart ✓';t.style.display='block';setTimeout(()=>t.style.display='none',1200)}
+function add(i){cart.push(products[i]);document.getElementById('count').textContent=cart.length;document.querySelector('.cart').classList.remove('bump');void document.querySelector('.cart').offsetWidth;document.querySelector('.cart').classList.add('bump');document.getElementById('total').textContent='K'+cart.reduce((s,p)=>s+parseFloat(p[1].replace('K','')),0).toFixed(2);let t=document.getElementById('toast');t.textContent='Added to cart ✓';t.style.display='block';setTimeout(()=>t.style.display='none',1200)}
 function filterProducts(){let q=document.getElementById('search').value.toLowerCase();render(products.filter(p=>p[0].toLowerCase().includes(q)))}
 document.getElementById('search').addEventListener('input',filterProducts);render();
 
@@ -107,6 +140,29 @@ document.getElementById('search').addEventListener('input',filterProducts);rende
     });
   }, {threshold:.08});
   targets.forEach(el=>io.observe(el));
+})();
+
+
+/* ===== Professional scroll reveal ===== */
+(function(){
+  const items = document.querySelectorAll('.section, .sectionHead, .visit, .footer');
+  if(!('IntersectionObserver' in window)){
+    items.forEach(el=>el.classList.add('revealed'));
+    return;
+  }
+  items.forEach((el,i)=>{
+    el.classList.add('scrollReveal');
+    el.style.setProperty('--reveal-delay', Math.min((i%4)*80,240)+'ms');
+  });
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('revealed');
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:.10,rootMargin:'0px 0px -30px 0px'});
+  items.forEach(el=>io.observe(el));
 })();
 
 </script></body></html>

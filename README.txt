@@ -1,1 +1,1 @@
-Good Care Pharmacy Ltd — approved exact design with subtle premium animations. The layout, colours and content structure are preserved. Upload index.html to GitHub Pages. All images remain embedded in the single HTML file.
+Good Care Pharmacy Ltd — exact approved design with enhanced professional animations. Upload index.html to GitHub Pages. All product/logo visuals remain embedded in the HTML.
